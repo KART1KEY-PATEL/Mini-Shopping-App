@@ -16,7 +16,7 @@ class CartOrderInfoItems extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         txt(title, size: 18, color: AppColors.secondaryTextColor),
-        txt("₹ ${price}", size: 18, color: AppColors.secondaryTextColor),
+        txt("₹ ${price}", size: 18, weight: FontWeight.w500),
       ],
     );
   }

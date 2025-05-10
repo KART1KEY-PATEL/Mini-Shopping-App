@@ -31,7 +31,11 @@ class CartPaymentWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               txt("VISA Casic", size: sW * 0.04, weight: FontWeight.w500),
-              txt("**** 9999", size: sW * 0.04),
+              txt(
+                "**** 9999",
+                size: sW * 0.04,
+                color: AppColors.secondaryTextColor,
+              ),
             ],
           ),
         ),

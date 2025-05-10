@@ -67,8 +67,9 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: sH * 0.02),
                     CategoryWidget(categoryName: "Choose Brand"),
                     BrandWidget(),
+                    SizedBox(height: sH * 0.02),
                     CategoryWidget(categoryName: "New Arrivals"),
-                    SizedBox(height: sH * 0.03),
+                    SizedBox(height: sH * 0.02),
                   ],
                 ),
               ),
@@ -93,7 +94,6 @@ class _HomePageState extends State<HomePage> {
                           sH: sH,
                           sW: sW,
                           product: product,
-                          // product: product, // Uncomment if needed
                         );
                       }, childCount: products.length),
                     ),

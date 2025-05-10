@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_shopping_app/bloc/cart/cart_bloc.dart';
 import 'package:mini_shopping_app/pages/cart_page.dart';
 import 'package:mini_shopping_app/pages/home_page.dart';
 import 'package:mini_shopping_app/utils/color.dart';
@@ -14,50 +16,55 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mini Shopping App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.primaryColor,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-        ).copyWith(primary: AppColors.secondaryColor),
-        buttonTheme: const ButtonThemeData(
-          buttonColor: AppColors.primaryButtonColor,
-          textTheme: ButtonTextTheme.primary,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: AppColors.textFieldColor,
-          hintStyle: TextStyle(
-            color: AppColors.secondaryTextColor,
-            fontSize: MediaQuery.of(context).size.height * 0.02,
+    return BlocProvider(
+      create: (context) => CartBloc(),
+      child: MaterialApp(
+        title: 'Mini Shopping App',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: AppColors.primaryColor,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple,
+          ).copyWith(primary: AppColors.secondaryColor),
+          buttonTheme: const ButtonThemeData(
+            buttonColor: AppColors.primaryButtonColor,
+            textTheme: ButtonTextTheme.primary,
           ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-            borderSide: BorderSide(
-              width: 0.5,
+          inputDecorationTheme: InputDecorationTheme(
+            filled: true,
+            fillColor: AppColors.textFieldColor,
+            hintStyle: TextStyle(
               color: AppColors.secondaryTextColor,
+              fontSize: MediaQuery.of(context).size.height * 0.02,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: BorderSide(
+                width: 0.5,
+                color: AppColors.secondaryTextColor,
+              ),
             ),
           ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColors.primaryColor,
+          ),
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(color: AppColors.secondaryTextColor),
+          ),
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: AppColors.secondaryTextColor,
+            selectionColor: const Color(0xFF4362FF),
+            selectionHandleColor: const Color(0xFF4362FF),
+          ),
+          fontFamily: 'PlusJakartaSans',
+          useMaterial3: true,
         ),
-        appBarTheme: const AppBarTheme(backgroundColor: AppColors.primaryColor),
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: AppColors.secondaryTextColor),
-        ),
-        textSelectionTheme: TextSelectionThemeData(
-          cursorColor: AppColors.secondaryTextColor,
-          selectionColor: const Color(0xFF4362FF),
-          selectionHandleColor: const Color(0xFF4362FF),
-        ),
-        fontFamily: 'PlusJakartaSans',
-        useMaterial3: true,
+        home: const HomePage(),
+        routes: {
+          '/base': (context) => const HomePage(),
+          '/cart': (context) => const CartPage(),
+        },
       ),
-      home: const HomePage(),
-      routes: {
-        '/base': (context) => const HomePage(),
-        '/cart': (context) => const CartPage(),
-      },
     );
   }
 }

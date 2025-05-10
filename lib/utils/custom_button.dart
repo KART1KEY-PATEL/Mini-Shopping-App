@@ -11,26 +11,29 @@ class CustomButton extends StatelessWidget {
     required this.sW,
   });
   final String title;
-  final Function()? onPressed;
+  final VoidCallback? onPressed;
   final double sH;
   final double sW;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: sW,
-      height: sH * 0.07,
-      decoration: BoxDecoration(
-        color: AppColors.primaryButtonColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: sW,
+        height: sH * 0.07,
+        decoration: BoxDecoration(
+          color: AppColors.primaryButtonColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
 
-      child: Center(
-        child: txt(
-          "Add to Cart",
-          color: AppColors.whiteContainer,
-          size: 20,
-          weight: FontWeight.w500,
+        child: Center(
+          child: txt(
+            "Add to Cart",
+            color: AppColors.whiteContainer,
+            size: 20,
+            weight: FontWeight.w500,
+          ),
         ),
       ),
     );

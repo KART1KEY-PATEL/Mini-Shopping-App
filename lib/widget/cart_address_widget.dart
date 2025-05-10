@@ -34,6 +34,7 @@ class CartAddressWidget extends StatelessWidget {
               txt(
                 "Mayur Residency, Near Sardar Patel School, Anand",
                 size: sW * 0.04,
+                color: AppColors.secondaryTextColor,
               ),
             ],
           ),
