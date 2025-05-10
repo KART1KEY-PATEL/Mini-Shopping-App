@@ -32,14 +32,14 @@ class MyApp extends StatelessWidget {
           filled: true,
           fillColor: AppColors.textFieldColor,
           hintStyle: TextStyle(
-            color: AppColors.greyColor,
+            color: AppColors.secondaryTextColor,
             fontSize: MediaQuery.of(context).size.height * 0.02,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide(
               width: 0.5,
-              color: AppColors.accentTextColor,
+              color: AppColors.secondaryTextColor,
             ),
           ),
         ),
@@ -49,11 +49,11 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           bodyLarge: TextStyle(
             color:
-                AppColors.secondaryTextColor, // Customize the text color here
+                AppColors.secondaryTextColor,
           ),
         ),
         textSelectionTheme: TextSelectionThemeData(
-          cursorColor: AppColors.accentTextColor,
+          cursorColor: AppColors.secondaryTextColor,
           selectionColor: const Color(0xFF4362FF),
           selectionHandleColor: const Color(0xFF4362FF),
         ),

@@ -1,14 +1,15 @@
 // Custom AppBar Component
 import 'package:flutter/material.dart';
+import 'package:mini_shopping_app/utils/color.dart';
 import 'package:mini_shopping_app/utils/text_util.dart';
 
 PreferredSizeWidget customAppBar({
   required String title,
   List<Widget>? actions,
   Widget? leading,
-  Color backgroundColor = const Color(0xFF1A1A24),
+  Color backgroundColor = AppColors.primaryColor,
   Color titleColor = Colors.white,
-  double elevation = 4.0,
+  double elevation = 0.0,
   bool centerTitle = false,
   double textSize = 20,
 }) {

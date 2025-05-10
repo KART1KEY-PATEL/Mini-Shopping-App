@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 import 'package:mini_shopping_app/utils/text_util.dart';
+
 class CustomTextField extends StatefulWidget {
   CustomTextField({
     super.key,
@@ -38,14 +39,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
       children: [
         widget.title.length != 0
             ? txt(
-                widget.title,
-                size: sH * 0.02,
-                color: AppColors.primaryTextColor,
-              )
+              widget.title,
+              size: sH * 0.018,
+              color: AppColors.primaryTextColor,
+            )
             : SizedBox(),
-        SizedBox(
-          height: sH * 0.008,
-        ),
+        // SizedBox(height: sH * 0.008),
         TextField(
           obscureText: _passwordVisible,
           controller: widget.controller,
@@ -55,24 +54,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
           decoration: InputDecoration(
             prefixIcon: widget.prefixIcon ?? null,
             hintText: widget.hintText,
-            suffix: widget.obsureText
-                ? InkWell(
-                    onTap: () {
-                      // Update the state i.e. toogle the state of passwordVisible variable
-                      setState(() {
-                        _passwordVisible = !_passwordVisible;
-                      });
-                    },
-                    child: Container(
-                      child: Icon(
-                        _passwordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                        color: Theme.of(context).primaryColorDark,
+            suffix:
+                widget.obsureText
+                    ? InkWell(
+                      onTap: () {
+                        // Update the state i.e. toogle the state of passwordVisible variable
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                      child: Container(
+                        child: Icon(
+                          _passwordVisible
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
                       ),
-                    ),
-                  )
-                : null,
+                    )
+                    : null,
             alignLabelWithHint: true,
             errorText: widget.validate ? null : widget.validatorText,
           ),
