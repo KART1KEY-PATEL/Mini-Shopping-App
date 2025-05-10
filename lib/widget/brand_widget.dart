@@ -23,19 +23,28 @@ class BrandWidget extends StatelessWidget {
         },
         itemBuilder: (context, index) {
           return Container(
-            height: sH * 0.05,
+            height: sH * 0.06,
             // width: sW * 0.2,
-            color: Colors.amber,
-            padding: EdgeInsets.symmetric(horizontal: sW * 0.02),
+            decoration: BoxDecoration(
+              color: AppColors.secondaryButtonColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: sW * 0.02,
+              // vertical: sH * 0.01,
+            ),
             child: Center(
               child: Row(
                 children: [
                   Container(
-                    height: sH * 0.04,
-                    color: Colors.white,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: AppColors.whiteSVGColor,
+                    ),
+                    padding: EdgeInsets.all(10),
                     child: SvgPicture.asset(
                       AppConstants.brands[index]["assets"]!,
-                      height: sH * 0.03,
+                      height: sH * 0.02,
                       width: sW * 0.1,
                       color: AppColors.darkSVGContainer,
                     ),

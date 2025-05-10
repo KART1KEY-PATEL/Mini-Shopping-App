@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "id": 1001,
+      "brand": "Nike",
+      "name": "Classic White T-Shirt",
+      "small_description": "Comfortable 100% cotton t-shirt",
+      "long_description": "This classic white t-shirt is made from premium 100% cotton for maximum comfort. Perfect for everyday wear, it features a crew neck and short sleeves. The fabric is breathable and soft against your skin, making it ideal for all seasons.",
+      "sizes": ["S", "M", "L", "XL"],
+      "price": 19.99,
+      "image": "1"
+    },
+    {
+      "id": 1002,
+      "brand": "Adidas",
+      "name": "Slim Fit Jeans",
+      "small_description": "Modern slim fit denim jeans",
+      "long_description": "These slim fit jeans are crafted from durable denim with just the right amount of stretch for comfort. Featuring a mid-rise waist, five-pocket styling, and a tapered leg opening for a contemporary look. Available in multiple washes.",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "price": 49.99,
+      "image": "2"
+    },
+    {
+      "id": 1003,
+      "brand": "Nike",
+      "name": "Running Shoes",
+      "small_description": "Lightweight running shoes with cushioning",
+      "long_description": "Designed for runners who want both comfort and performance. These shoes feature responsive cushioning, a breathable mesh upper, and a durable rubber outsole for traction. The ergonomic design supports your foot's natural motion.",
+      "sizes": ["7", "8", "9", "10", "11", "12"],
+      "price": 89.99,
+      "image": "3"
+    },
+    {
+      "id": 1004,
+      "brand": "Adidas",
+      "name": "Leather Wallet",
+      "small_description": "Genuine leather bifold wallet",
+      "long_description": "This premium bifold wallet is made from genuine leather that develops a beautiful patina over time. Features multiple card slots, a clear ID window, and a bill compartment. Perfect for everyday carry with a sophisticated look.",
+      "sizes": ["One Size"],
+      "price": 34.99,
+      "image": "4"
+    },
+    {
+      "id": 1005,
+      "brand": "Nike",
+      "name": "Wireless Headphones",
+      "small_description": "Noise-cancelling Bluetooth headphones",
+      "long_description": "Experience premium sound quality with these wireless headphones. Features active noise cancellation, 30-hour battery life, and comfortable over-ear cushions. The built-in microphone allows for clear calls, and the foldable design makes them perfect for travel.",
+      "sizes": ["One Size"],
+      "price": 199.99,
+      "image": "1"
+    },
+    {
+      "id": 1006,
+      "brand": "Adidas",
+      "name": "Yoga Mat",
+      "small_description": "Non-slip eco-friendly yoga mat",
+      "long_description": "This extra-thick yoga mat provides cushioning and support for all types of yoga practice. The non-slip surface ensures stability in all poses, while the eco-friendly materials make it a sustainable choice. Includes carrying strap for easy transport.",
+      "sizes": ["Regular", "Long"],
+      "price": 29.99,
+      "image": "2"
+    },
+    {
+      "id": 1007,
+      "brand": "Nike",
+      "name": "Winter Parka",
+      "small_description": "Heavy-duty cold weather coat",
+      "long_description": "Stay warm in sub-zero temperatures with this insulated parka. Features a waterproof outer shell, removable faux-fur hood, and multiple pockets for storage. The quilted lining provides exceptional warmth without bulk.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "price": 149.99,
+      "image": "3"
+    },
+    {
+      "id": 1008,
+      "brand": "Adidas",
+      "name": "Stainless Steel Water Bottle",
+      "small_description": "Insulated 24oz water bottle",
+      "long_description": "Keep your drinks cold for 24 hours or hot for 12 with this vacuum-insulated stainless steel bottle. Features a leak-proof lid, carrying loop, and sweat-proof exterior. BPA-free and dishwasher safe for easy cleaning.",
+      "sizes": ["24oz"],
+      "price": 24.99,
+      "image": "4"
+    },
+    {
+      "id": 1009,
+      "brand": "Nike",
+      "name": "Smart Watch",
+      "small_description": "Fitness tracking smartwatch",
+      "long_description": "Monitor your health and stay connected with this feature-packed smartwatch. Tracks heart rate, sleep, steps, and multiple workout modes. Receive notifications, control music, and enjoy 7-day battery life. Water resistant up to 50 meters.",
+      "sizes": ["Small", "Medium", "Large"],
+      "price": 129.99,
+      "image": "1"
+    },
+    {
+      "id": 1010,
+      "brand": "Adidas",
+      "name": "Backpack",
+      "small_description": "Durable everyday backpack",
+      "long_description": "This versatile backpack features a laptop compartment, multiple organizational pockets, and comfortable padded straps. Made from water-resistant nylon with reinforced stitching for durability. Perfect for work, school, or travel.",
+      "sizes": ["20L", "30L"],
+      "price": 59.99,
+      "image": "2"
+    },
+    {
+      "id": 1011,
+      "brand": "Nike",
+      "name": "Ceramic Coffee Mug Set",
+      "small_description": "Set of 4 stoneware mugs",
+      "long_description": "Elevate your morning routine with these handcrafted ceramic mugs. Each 12oz mug features a comfortable handle and glossy finish. Microwave and dishwasher safe. Sold as a set of four with coordinating colors.",
+      "sizes": ["Set of 4"],
+      "price": 32.99,
+      "image": "3"
+    },
+    {
+      "id": 1012,
+      "brand": "Adidas",
+      "name": "Gaming Mouse",
+      "small_description": "High-precision RGB gaming mouse",
+      "long_description": "Dominate your games with this professional-grade gaming mouse. Features adjustable DPI up to 16,000, programmable buttons, and customizable RGB lighting. The ergonomic design provides comfort during long gaming sessions.",
+      "sizes": ["One Size"],
+      "price": 49.99,
+      "image": "4"
+    },
+    {
+      "id": 1013,
+      "brand": "Nike",
+      "name": "Cotton Sheets Set",
+      "small_description": "400 thread count sheet set",
+      "long_description": "Sleep in luxury with these premium 100% Egyptian cotton sheets. The 400 thread count fabric is soft, breathable, and gets softer with each wash. Set includes flat sheet, fitted sheet, and two pillowcases.",
+      "sizes": ["Twin", "Full", "Queen", "King"],
+      "price": 89.99,
+      "image": "1"
+    },
+    {
+      "id": 1014,
+      "brand": "Adidas",
+      "name": "Wireless Charger",
+      "small_description": "Fast-charging Qi pad",
+      "long_description": "Charge your Qi-compatible devices quickly and conveniently without cables. This charging pad delivers up to 15W fast charging with built-in temperature control and foreign object detection for safety. Non-slip surface keeps your device in place.",
+      "sizes": ["One Size"],
+      "price": 29.99,
+      "image": "2"
+    },
+    {
+      "id": 1015,
+      "brand": "Nike",
+      "name": "Resistance Bands Set",
+      "small_description": "5-piece workout bands",
+      "long_description": "This complete set includes five resistance levels from extra light to extra heavy. Perfect for strength training, physical therapy, or mobility exercises. Comes with carrying case, door anchor, and exercise guide.",
+      "sizes": ["Set of 5"],
+      "price": 22.99,
+      "image": "3"
+    },
+    {
+      "id": 1016,
+      "brand": "Adidas",
+      "name": "Aromatherapy Diffuser",
+      "small_description": "Ultrasonic essential oil diffuser",
+      "long_description": "Create a relaxing atmosphere with this whisper-quiet diffuser. Features four timer settings, seven LED color options, and automatic shut-off. The ultrasonic technology breaks down oils without heat to preserve their therapeutic benefits.",
+      "sizes": ["300ml"],
+      "price": 39.99,
+      "image": "4"
+    }
+  ]
+}
