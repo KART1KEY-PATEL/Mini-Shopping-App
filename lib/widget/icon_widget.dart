@@ -9,7 +9,7 @@ class IconWidget extends StatelessWidget {
     this.reverseColor = false,
     required this.onPressed,
   });
-  final Function onPressed;
+  final VoidCallback onPressed; // Changed from Function to VoidCallback
   final String iconAsset;
   final bool reverseColor;
 
@@ -18,11 +18,11 @@ class IconWidget extends StatelessWidget {
     double sH = MediaQuery.of(context).size.height;
     double sW = MediaQuery.of(context).size.width;
     return GestureDetector(
-      onTap: () => onPressed(),
+      onTap: onPressed,
       child: Container(
         // height: sH * 0.05,
         // width: sW * 0.13,
-        padding: EdgeInsets.all(sW * 0.01),
+        padding: EdgeInsets.all(sW * 0.03),
         decoration: BoxDecoration(
           color:
               reverseColor
@@ -30,9 +30,8 @@ class IconWidget extends StatelessWidget {
                   : AppColors.secondaryButtonColor,
           shape: BoxShape.circle,
         ),
-        child: IconButton(
-          icon: SvgPicture.asset(iconAsset, height: 30, width: 30),
-          onPressed: () {},
+        child: Center(
+          child: SvgPicture.asset(iconAsset, height: 30, width: 30),
         ),
       ),
     );

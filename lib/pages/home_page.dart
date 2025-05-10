@@ -37,7 +37,12 @@ class _HomePageState extends State<HomePage> {
       appBar: customAppBar(
         title: '',
         actions: [
-          IconWidget(iconAsset: "assets/icons/bag.svg", onPressed: () {}),
+          IconWidget(
+            iconAsset: "assets/icons/bag.svg",
+            onPressed: () {
+              Navigator.pushNamed(context, '/cart');
+            },
+          ),
           SizedBox(width: sW * 0.02),
         ],
       ),

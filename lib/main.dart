@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mini_shopping_app/pages/cart_page.dart';
 import 'package:mini_shopping_app/pages/home_page.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 
 void main() async {
   // Open the Hive box for CompanyModel, but data will
-  runApp(
-    const MyApp(),
-  );
+  runApp(const MyApp());
   // const MyApp());
 }
 
@@ -20,10 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.primaryColor,
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
-          primary: AppColors.secondaryColor,
-        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ).copyWith(primary: AppColors.secondaryColor),
         buttonTheme: const ButtonThemeData(
           buttonColor: AppColors.primaryButtonColor,
           textTheme: ButtonTextTheme.primary,
@@ -43,14 +41,9 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.primaryColor,
-        ),
+        appBarTheme: const AppBarTheme(backgroundColor: AppColors.primaryColor),
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(
-            color:
-                AppColors.secondaryTextColor,
-          ),
+          bodyLarge: TextStyle(color: AppColors.secondaryTextColor),
         ),
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: AppColors.secondaryTextColor,
@@ -63,6 +56,7 @@ class MyApp extends StatelessWidget {
       home: const HomePage(),
       routes: {
         '/base': (context) => const HomePage(),
+        '/cart': (context) => const CartPage(),
       },
     );
   }

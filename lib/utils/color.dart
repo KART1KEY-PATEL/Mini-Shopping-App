@@ -6,6 +6,7 @@ class AppColors {
 
   // Secondary color
   static Color secondaryColor = Color(0xFF9775FA);
+  static Color cartItemColor = Color(0xFFFEFEFE);
 
   // Background color
   static const Color backgroundColor = Color(0xFFFFFFFF);
@@ -25,7 +26,7 @@ class AppColors {
   // Button colors
   static const Color primaryButtonColor = Color(0xFF9775FA);
   static const Color secondaryButtonColor = Color(0xFFF5F6FA);
-  static const Color borderButtonColor = Color(0xFF0E46A3);
+  static const Color borderButtonColor = Color(0xFF8F959E);
   static const Color accentButtonColor = Color(0xFF7F94FF);
 
   // Border color
