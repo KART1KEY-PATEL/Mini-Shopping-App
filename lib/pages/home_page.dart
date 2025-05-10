@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_shopping_app/bloc/brand/brand_bloc.dart';
+import 'package:mini_shopping_app/bloc/brand/brand_state.dart';
 import 'package:mini_shopping_app/constants/contants.dart';
 import 'package:mini_shopping_app/extensions/string_extensions.dart';
 import 'package:mini_shopping_app/models/product_model.dart';
@@ -74,37 +77,55 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            FutureBuilder<ProductList>(
-              future: futureProducts,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  List<Product> products = snapshot.data!.products;
-                  return SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: sW * 0.05),
-                    sliver: SliverGrid(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        childAspectRatio: 0.55,
-                      ),
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        Product product = products[index];
-                        return ItemThumbnailWidget(
-                          sH: sH,
-                          sW: sW,
-                          product: product,
-                        );
-                      }, childCount: products.length),
-                    ),
-                  );
-                } else if (snapshot.hasError) {
-                  return SliverToBoxAdapter(
-                    child: Center(child: Text("${snapshot.error}")),
-                  );
-                }
-                return SliverToBoxAdapter(
-                  child: Center(child: CircularProgressIndicator()),
+            BlocBuilder<BrandBloc, BrandState>(
+              builder: (context, brandState) {
+                return FutureBuilder<ProductList>(
+                  future: futureProducts,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      List<Product> products = snapshot.data!.products;
+                      if (brandState is BrandSelected) {
+                        products =
+                            products
+                                .where(
+                                  (product) =>
+                                      product.brand.toLowerCase() ==
+                                      brandState.selectedBrand.toLowerCase(),
+                                )
+                                .toList();
+                      }
+                      return SliverPadding(
+                        padding: EdgeInsets.symmetric(horizontal: sW * 0.05),
+                        sliver: SliverGrid(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                childAspectRatio: 0.55,
+                              ),
+                          delegate: SliverChildBuilderDelegate((
+                            context,
+                            index,
+                          ) {
+                            Product product = products[index];
+                            return ItemThumbnailWidget(
+                              sH: sH,
+                              sW: sW,
+                              product: product,
+                            );
+                          }, childCount: products.length),
+                        ),
+                      );
+                    } else if (snapshot.hasError) {
+                      return SliverToBoxAdapter(
+                        child: Center(child: Text("${snapshot.error}")),
+                      );
+                    }
+                    return SliverToBoxAdapter(
+                      child: Center(child: CircularProgressIndicator()),
+                    );
+                  },
                 );
               },
             ),
