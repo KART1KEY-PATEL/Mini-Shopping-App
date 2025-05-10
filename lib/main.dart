@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mini_shopping_app/bloc/brand/brand_bloc.dart';
 import 'package:mini_shopping_app/bloc/cart/cart_bloc.dart';
+import 'package:mini_shopping_app/bloc/like/like_bloc.dart';
+import 'package:mini_shopping_app/models/cart_item_model.dart';
+import 'package:mini_shopping_app/models/product_model.dart';
+import 'package:mini_shopping_app/pages/base.dart';
 import 'package:mini_shopping_app/pages/cart_page.dart';
 import 'package:mini_shopping_app/pages/home_page.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 
 void main() async {
   // Open the Hive box for CompanyModel, but data will
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+
+  // Register adapters
+  Hive.registerAdapter(ProductAdapter());
+  Hive.registerAdapter(CartItemAdapter());
+
+  // Open boxes
+  await Hive.openBox<CartItem>('cart');
+  await Hive.openBox<Product>('likes');
   runApp(
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => CartBloc()),
         BlocProvider(create: (context) => BrandBloc()),
+        BlocProvider(create: (context) => LikesBloc()),
       ],
       child: MyApp(),
     ),
@@ -64,10 +81,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'PlusJakartaSans',
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: Base(),
       routes: {
         '/base': (context) => const HomePage(),
-        '/cart': (context) => const CartPage(),
+        '/cart': (context) => CartPage(),
       },
     );
   }

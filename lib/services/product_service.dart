@@ -13,4 +13,8 @@ class ProductService {
       throw Exception('Failed to load products: $e');
     }
   }
+
+  String getImagePath(Product product) {
+    return "assets/image/product_image${product.image}.png";
+  }
 }

@@ -30,7 +30,6 @@ class CartPage extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Header with back button and title
                     Row(
                       children: [
                         IconWidget(
@@ -78,7 +77,7 @@ class CartPage extends StatelessWidget {
                               child: txt(
                                 "Continue Shopping",
                                 size: sW * 0.04,
-                                color: Colors.white,
+                                weight: FontWeight.w500,
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppColors.primaryColor,

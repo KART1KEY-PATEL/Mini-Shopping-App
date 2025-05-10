@@ -28,6 +28,7 @@ class AppColors {
   static const Color secondaryButtonColor = Color(0xFFF5F6FA);
   static const Color borderButtonColor = Color(0xFF8F959E);
   static const Color accentButtonColor = Color(0xFF7F94FF);
+  static const Color lightBlueAccentButtonColor = Color(0xFF7F94FF);
 
   // Border color
   static const Color textFieldColor = Color(0xff282932);

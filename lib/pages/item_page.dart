@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mini_shopping_app/models/product_model.dart';
+import 'package:mini_shopping_app/services/product_service.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 import 'package:mini_shopping_app/utils/custom_appBar.dart';
+import 'package:mini_shopping_app/widget/cart_icon_widget.dart';
 import 'package:mini_shopping_app/widget/icon_widget.dart';
 import 'package:mini_shopping_app/widget/item_detail_widget.dart';
 
@@ -31,16 +33,21 @@ class ItemPage extends StatelessWidget {
                       },
                     ),
 
-                    IconWidget(
-                      iconAsset: "assets/icons/bag.svg",
-                      onPressed: () {},
-                      reverseColor: true,
-                    ),
+                    CartIconWidget(sH: sH, sW: sW),
                   ],
                 ),
               ),
               SizedBox(height: sH * 0.02),
-              Container(height: sH * 0.42, width: sW, color: Colors.amber),
+              Container(
+                height: sH * 0.42,
+                width: sW,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(ProductService().getImagePath(product)),
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              ),
               ItemDetailWidget(product: product),
             ],
           ),

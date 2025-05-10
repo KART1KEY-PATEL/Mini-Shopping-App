@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mini_shopping_app/bloc/cart/cart_bloc.dart';
 import 'package:mini_shopping_app/bloc/cart/cart_event.dart';
 import 'package:mini_shopping_app/models/cart_item_model.dart';
+import 'package:mini_shopping_app/services/product_service.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 import 'package:mini_shopping_app/utils/text_util.dart';
 
@@ -27,6 +28,12 @@ class CartItemDetailWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.secondaryButtonColor,
             borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              image: AssetImage(
+                ProductService().getImagePath(cartItem.product),
+              ),
+              fit: BoxFit.fitHeight,
+            ),
           ),
         ),
         SizedBox(width: sW * 0.05),

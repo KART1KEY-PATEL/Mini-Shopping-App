@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_shopping_app/extensions/string_extensions.dart';
 import 'package:mini_shopping_app/models/product_model.dart';
 import 'package:mini_shopping_app/pages/item_page.dart';
+import 'package:mini_shopping_app/services/product_service.dart';
 import 'package:mini_shopping_app/utils/color.dart';
 import 'package:mini_shopping_app/utils/like_button.dart';
 import 'package:mini_shopping_app/utils/text_util.dart';
@@ -42,13 +43,20 @@ class ItemThumbnailWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: AppColors.secondaryButtonColor,
                     borderRadius: BorderRadius.circular(10),
+
+                    image: DecorationImage(
+                      image: AssetImage(ProductService().getImagePath(product)),
+                      fit: BoxFit.fitHeight,
+                    ),
                   ),
                 ),
               ),
               Positioned(
-                right: 10,
-                top: 10,
-                child: CustomLikeButton(isLiked: false),
+                right: 5,
+                top: 2,
+                child: CustomLikeButton(
+                  product: product,
+                ), // Changed from isLiked: false
               ),
             ],
           ),

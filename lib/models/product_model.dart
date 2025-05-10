@@ -1,12 +1,25 @@
-class Product {
-  final int id;
-  final String brand;
-  final String name;
+// product_model.dart
+import 'package:hive/hive.dart';
 
+part 'product_model.g.dart'; // Generated file
+
+@HiveType(typeId: 0)
+class Product {
+  @HiveField(0)
+  final int id;
+  @HiveField(1)
+  final String brand;
+  @HiveField(2)
+  final String name;
+  @HiveField(3)
   final String smallDescription;
+  @HiveField(4)
   final String longDescription;
+  @HiveField(5)
   final List<String> sizes;
+  @HiveField(6)
   final double price;
+  @HiveField(7)
   final String image;
 
   Product({
@@ -17,7 +30,7 @@ class Product {
     required this.longDescription,
     required this.sizes,
     required this.price,
-    required this.image
+    required this.image,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -46,6 +59,7 @@ class Product {
     };
   }
 }
+
 
 class ProductList {
   final List<Product> products;

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mini_shopping_app/bloc/brand/brand_bloc.dart';
 import 'package:mini_shopping_app/bloc/brand/brand_state.dart';
+import 'package:mini_shopping_app/bloc/cart/cart_bloc.dart';
+import 'package:mini_shopping_app/bloc/cart/cart_state.dart';
 import 'package:mini_shopping_app/constants/contants.dart';
 import 'package:mini_shopping_app/extensions/string_extensions.dart';
 import 'package:mini_shopping_app/models/product_model.dart';
@@ -11,6 +13,7 @@ import 'package:mini_shopping_app/utils/custom_appBar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_shopping_app/utils/text_util.dart';
 import 'package:mini_shopping_app/widget/brand_widget.dart';
+import 'package:mini_shopping_app/widget/cart_icon_widget.dart';
 import 'package:mini_shopping_app/widget/icon_widget.dart';
 import 'package:mini_shopping_app/widget/category_widget.dart';
 import 'package:mini_shopping_app/widget/item_thumbnail_widget.dart';
@@ -39,15 +42,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: customAppBar(
         title: '',
-        actions: [
-          IconWidget(
-            iconAsset: "assets/icons/bag.svg",
-            onPressed: () {
-              Navigator.pushNamed(context, '/cart');
-            },
-          ),
-          SizedBox(width: sW * 0.02),
-        ],
+        actions: [CartIconWidget(sH: sH, sW: sW), SizedBox(width: sW * 0.02)],
       ),
       body: SafeArea(
         child: CustomScrollView(
@@ -66,13 +61,13 @@ class _HomePageState extends State<HomePage> {
                       color: AppColors.secondaryTextColor,
                     ),
                     SizedBox(height: sH * 0.02),
-                    SearchMicWidget(),
-                    SizedBox(height: sH * 0.02),
                     CategoryWidget(categoryName: "Choose Brand"),
+
+                    SizedBox(height: sH * 0.01),
                     BrandWidget(),
                     SizedBox(height: sH * 0.02),
                     CategoryWidget(categoryName: "New Arrivals"),
-                    SizedBox(height: sH * 0.02),
+                    SizedBox(height: sH * 0.01),
                   ],
                 ),
               ),
